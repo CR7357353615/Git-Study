@@ -1,0 +1,20 @@
+打补丁：
+在需要打补丁的分支：
+git log 查看最近提交
+git format-patch HEAD^^ 打前两个版本的补丁，^表示一个版本
+切换到要被打补丁的分支
+git am --abort
+git am -3 0002-.....patch
+如果遇到冲突，在Intellij中解决
+git am --continue
+
+
+分支切换开发时：
+在feature1上：
+git pull --rebase origin master 用于在feature branch上同步最新的代码
+切换到master
+git merge --no-ff feature-branch 用于把feature branch合并到devgit 
+git push origin master
+切换到feature2上：
+git rebase master
+
